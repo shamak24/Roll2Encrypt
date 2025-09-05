@@ -1,61 +1,93 @@
-Ludo-Based Data Encryption System
+# 🎲 Roll2Encrypt: Ludo-Based Data Encryption System
 
-Problem Statement
+## ✨ An Innovative Approach to Data Security
 
-Traditional encryption methods rely on mathematical transformations that, while secure, are often susceptible to brute-force attacks with increasing computational power. A novel approach to encryption is needed—one that integrates game mechanics to obfuscate data in a way that is difficult to predict or crack using conventional decryption methods.
+Welcome to **Roll2Encrypt**! This project presents a novel, game-based data encryption system that uses the classic game of Ludo to secure and obfuscate data. By transforming traditional encryption methods into a fun, interactive, and unpredictable process, Roll2Encrypt offers a unique blend of security, innovation, and educational value.
 
-Why Is This Important?
-		1.	Security Through Obfuscation: Unlike standard encryption techniques (AES, RSA), this method makes pattern recognition and decryption harder by using the game mechanics of Ludo to encrypt data.
-		2.	Novelty & Innovation: Most encryption methods use direct mathematical transformations, whereas this method maps data to real-world gameplay movements, making it unconventional and unpredictable.
-		3.	Educational Value: It provides an interactive way to understand encryption, making it useful for educational purposes and cryptographic research.
-		4.	Potential Real-World Use Cases:
-			•	Secure Messaging Systems (hiding encryption in game data).
-			•	Steganography (concealing messages within gameplay).
-			•	Gaming Industry Security (for securing in-game transactions).
+---
 
-Significance of the Project
-	•	Introduces game-based cryptography, an innovative way to secure data.
-	•	Uses Huffman coding to compress and encode text efficiently.
-	•	Incorporates multiple game parameters (Ludo pieces, board positions, dice values) for encryption.
-	•	Provides an extra layer of randomness, making brute-force decryption much harder.
+## 🎯 The Problem
 
-Technologies Used
+Traditional encryption methods, while secure, are often based on predictable mathematical transformations. As computational power grows, these methods become increasingly vulnerable to brute-force attacks. There is a need for a new approach that makes data difficult to predict or crack using conventional decryption methods.
 
- 	Programming Language: Python
-	Data Structures:
-		•	Huffman Tree (for character encoding).
-		•	Hash Tables (for fast lookup of dice mappings).
-		•	Graph (for board representation).
-	Randomization: PRNG (Pseudo-Random Number Generator) for dice rolls.
-	File Handling: To store encrypted messages and metadata.
+---
 
-Solution Statement
+## 💡 Why It's Important
 
-This encryption system will convert text into an encoded format using a combination of Huffman coding and Ludo game mechanics. Each ASCII character will be mapped to a game action, which consists of:
-	•	Which color piece moves (Red, Blue, Green, Yellow).
-	•	Which type of piece was moved (capital letter, lowercase, number, symbol).
-	•	Which square the piece moved to (based on Ludo board positions).
-	•	What was the dice roll value (ranging from 1-99).
+* **Security Through Obfuscation:** Unlike standard techniques like AES or RSA, Roll2Encrypt's use of Ludo game mechanics makes pattern recognition and decryption significantly harder.
+* **Novelty & Innovation:** This system breaks from the norm of direct mathematical transformations by mapping data to real-world gameplay movements, introducing an unconventional and unpredictable layer of security.
+* **Educational Value:** It serves as an engaging and interactive tool for understanding the principles of cryptography and is perfect for educational purposes or cryptographic research.
+* **Potential Real-World Use Cases:**
+    * Secure Messaging Systems: Conceal encryption within game data.
+    * Steganography: Hide secret messages within gameplay.
+    * Gaming Industry Security: Secure in-game transactions and user data.
 
-Each of these parameters contributes to the final Huffman-encoded bit sequence, which is stored as the encrypted output.
+---
 
-How It Works (Encryption Process)
+## 🚀 Project Significance
 
-	Step 1: Text Input & ASCII Conversion
-		1.	The user inputs a text message for encryption.
-		2.	Each character is converted into ASCII format.
+* **Game-Based Cryptography:** Introduces an innovative way to secure data by integrating game mechanics.
+* **Efficient Encoding:** Utilizes Huffman coding to compress and encode text efficiently, reducing the size of the encrypted data.
+* **Multi-Parameter Encryption:** Incorporates multiple game parameters (Ludo piece color, piece type, board position, dice values) for a multi-layered encryption process.
+* **Enhanced Randomness:** The system provides an extra layer of randomness, making brute-force decryption far more challenging than with traditional methods.
 
-	Step 2: Apply Huffman Coding
-		3.	A Huffman tree is built based on character frequency.
-		4.	Each character is assigned a unique binary Huffman code (variable-length).
+---
 
-	Step 3: Map Huffman Codes to Ludo Game Elements
-		5.	Each character’s Huffman code is used to determine:
-			•	Color of the Ludo piece moving
-			•	Type of character (capital, small, number, symbol) → Which piece moves
-			•	Board square number (based on a predefined mapping).
-			•	Dice value assigned to that move (randomized but reversible).
+## 💻 Tech Stack
 
-	Step 4: Generate the Encrypted Output
-		6.	The final encrypted message consists of a sequence of Ludo movements, each representing a character in the original text.
-		7.	This sequence is stored or transmitted securely.
+### Frontend
+* **HTML:** Structuring the user interface.
+* **CSS:** Styling the game board and user elements for a beautiful and intuitive design.
+* **JavaScript:** Handling user input, displaying real-time game state, and communicating with the backend.
+
+### Backend
+* **Python:** The core programming language for the encryption logic.
+* **Flask:** A lightweight web framework to serve the frontend and handle API requests for encryption and decryption.
+
+### Data Structures
+* **Huffman Tree:** For variable-length character encoding based on frequency.
+* **Hash Tables:** For fast and efficient lookup of dice value mappings.
+* **Graph:** To represent the Ludo board and manage piece movements.
+* **File Handling:** To securely store encrypted messages and related metadata.
+
+---
+
+## 🔒 How It Works: The Encryption Process
+
+### **Step 1: Text Input & ASCII Conversion**
+* The user provides the text message they wish to encrypt.
+* Each character of the message is converted into its corresponding ASCII format.
+
+### **Step 2: Apply Huffman Coding**
+* The system builds a Huffman tree based on the frequency of each character in the input text.
+* Each character is then assigned a unique, variable-length binary Huffman code.
+
+### **Step 3: Map Huffman Codes to Ludo Game Elements**
+* The binary Huffman code for each character is used to determine a specific set of Ludo game actions:
+    * **Piece Color:** Which Ludo piece moves (e.g., Red, Blue, Green, Yellow).
+    * **Piece Type:** The type of character (capital letter, lowercase, number, or symbol) determines which piece is moved.
+    * **Board Square:** The destination square number on the Ludo board.
+    * **Dice Value:** A pseudo-randomly generated dice value (1-99) is assigned to the move.
+
+### **Step 4: Generate the Encrypted Output**
+* The final encrypted message is a sequential series of Ludo movements, where each movement uniquely represents a character from the original text.
+* This sequence, along with the necessary metadata (like the Huffman tree structure), is securely stored or transmitted.
+
+---
+
+## 🏃‍♀️ How to Run
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/shamak24/Roll2Encrypt.git
+    ```
+2.  **Install backend dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Run the Flask application:**
+    ```bash
+    python app.py
+    ```
+4.  **Open in your browser:**
+    Access the application at `http://127.0.0.1:5000` to start encrypting your messages!
