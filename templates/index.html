@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ludo-Based Encryption</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🎲 Ludo-Based Data Encryption System</h1>
+    <p class="subtitle">Secure your data with innovative ludo-based encryption algorithm</p>
+    
+    <div class="features-section">
+      <h2 class="section-title">✨ Features & Capabilities</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-icon">🎲</span>
+          <h3 class="feature-title">Ludo-Based Algorithm</h3>
+          <p class="feature-description">Uses unique ludo game mechanics to create unpredictable encryption patterns</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🔒</span>
+          <h3 class="feature-title">Secure Encryption</h3>
+          <p class="feature-description">Advanced cryptographic techniques ensure your data remains protected</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🗝️</span>
+          <h3 class="feature-title">Code Map Generation</h3>
+          <p class="feature-description">Generates unique code maps for each encryption session</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">⚡</span>
+          <h3 class="feature-title">Fast Processing</h3>
+          <p class="feature-description">Quick encryption and decryption with real-time results</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">📱</span>
+          <h3 class="feature-title">Responsive Design</h3>
+          <p class="feature-description">Works seamlessly on desktop, tablet, and mobile devices</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🎯</span>
+          <h3 class="feature-title">User Friendly</h3>
+          <p class="feature-description">Simple interface with copy-to-clipboard functionality</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="card">
+      <div class="card-header">
+        <span class="icon">🔐</span>
+        <h2>Encrypt Your Text</h2>
+      </div>
+      
+      <div class="input-group">
+        <textarea id="inputText" rows="4" placeholder="Enter your text to encrypt..."></textarea>
+      </div>
+      
+      <button class="btn" onclick="encrypt()">Encrypt Text</button>
+      
+      <div class="output-section">
+        <div class="output-label">Encrypted Hash Key</div>
+        <div class="output-container">
+          <div class="output-box" id="hashedKeyOutput"></div>
+          <button class="copy-btn" onclick="copyToClipboard('hashedKeyOutput', this)">📋 Copy</button>
+        </div>
+        
+        <div class="output-label">Code Map (Save this for decryption)</div>
+        <div class="output-container">
+          <div class="output-box" id="codeMapOutput"></div>
+          <button class="copy-btn" onclick="copyToClipboard('codeMapOutput', this)">📋 Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    
+    <div class="card">
+      <div class="card-header">
+        <span class="icon">🔓</span>
+        <h2>Decrypt Your Text</h2>
+      </div>
+      
+      <div class="input-group">
+        <input type="text" id="hashedInput" placeholder="Paste your encrypted hash key here">
+      </div>
+      
+      <div class="input-group">
+        <textarea id="codeMapInput" rows="4" placeholder="Paste your code map here (if available)"></textarea>
+      </div>
+      
+      <button class="btn" onclick="decrypt()">Decrypt Text</button>
+      
+      <div class="output-section">
+        <div class="output-label">Decrypted Original Text</div>
+        <div class="output-box" id="originalTextOutput"></div>
+      </div>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
